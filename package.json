@@ -1,0 +1,31 @@
+{
+  "name": "map-map",
+  "version": "3.0.0",
+  "description": "Applies a callback to each key-value pair of a Map or Object.",
+  "keywords": [
+    "map",
+    "object"
+  ],
+  "author": "John Lamansky",
+  "license": "MIT",
+  "homepage": "https://github.com/lamansky/map-map",
+  "repository": "lamansky/map-map",
+  "main": "index.js",
+  "files": [],
+  "dependencies": {
+    "m-o": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint-config-lamansky": "^1.0.0",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": "lamansky",
+    "env": {
+      "mocha": true
+    }
+  }
+}
