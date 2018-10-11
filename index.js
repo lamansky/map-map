@@ -1,5 +1,7 @@
 'use strict'
 
-const {entriesArray, reconstruct} = require('m-o')
+const construct = require('construct-map')
+const entries = require('entries-array')
+const sbo = require('sbo')
 
-module.exports = (map, mapper) => reconstruct(map, entriesArray(map).map(([k, v], i) => mapper(k, v, i)))
+module.exports = sbo((map, mapper, options) => construct(map, entries(map, options).map(([k, v], i) => mapper(k, v, i))))
