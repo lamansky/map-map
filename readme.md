@@ -23,7 +23,7 @@ Works on Objects too:
 ```javascript
 const mapMap = require('map-map')
 
-let obj = {key: value}
+let obj = {key: 'value'}
 obj = mapMap(obj, (key, value, index) => [key + '_mapped', value + '_mapped'])
 obj.key_mapped // 'value_mapped'
 ```
