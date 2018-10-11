@@ -1,6 +1,6 @@
 {
   "name": "map-map",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Applies a callback to each key-value pair of a Map or Object.",
   "keywords": [
     "map",
