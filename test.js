@@ -1,7 +1,6 @@
 'use strict'
 
 const assert = require('assert')
-const isArrayWith = require('is-array-with')
 const mapMap = require('.')
 
 describe('mapMap()', function () {
@@ -13,14 +12,14 @@ describe('mapMap()', function () {
   })
 
   it('should apply a callback to each entry of an Object', function () {
-    const obj = mapMap({1: 1, 2: 2}, (k, v) => [k + 'm', v + 'm'])
-    assert.strictEqual(Object.keys(obj).length, 2)
-    assert.strictEqual(obj['1m'], '1m')
-    assert.strictEqual(obj['2m'], '2m')
+    assert.deepStrictEqual(
+      mapMap({1: 1, 2: 2}, (k, v) => [k + 'm', v + 'm']),
+      {'1m': '1m', '2m': '2m'},
+    )
   })
 
   it('should apply a callback to each entry of an Array', function () {
-    assert(isArrayWith(mapMap([1, 2], (k, v) => [k, v * 2]), 2, 4))
+    assert.deepStrictEqual(mapMap([1, 2], (k, v) => [k, v * 2]), [2, 4])
   })
 
   it('should provide the index as third argument to the callback', function () {
