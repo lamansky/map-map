@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "construct-map": "^1.2.0",
-    "entries-array": "^1.2.0"
+    "entries-array": "^1.2.0",
+    "is-array-of-length": "^1.1.0",
+    "is-instance-of": "^1.0.2"
   },
   "devDependencies": {
     "eslint-config-lamansky": "^2.0.0",

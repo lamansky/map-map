@@ -28,4 +28,14 @@ describe('mapMap()', function () {
     assert.strictEqual(map.get('a0'), 'a0')
     assert.strictEqual(map.get('b1'), 'b1')
   })
+
+  it('should support `recursive` argument', function () {
+    const d = (k, v) => [k, typeof v === 'number' ? v * 2 : v]
+    const obj = {a: 1, b: [2, 3], c: {d: 4}}
+
+    assert.deepStrictEqual(mapMap(obj, d), {a: 2, b: [2, 3], c: {d: 4}})
+    assert.deepStrictEqual(mapMap(obj, d, {recursive: [Array]}), {a: 2, b: [4, 6], c: {d: 4}})
+    assert.deepStrictEqual(mapMap(obj, d, {recursive: Array.isArray}), {a: 2, b: [4, 6], c: {d: 4}})
+    assert.deepStrictEqual(mapMap(obj, d, {recursive: [Object]}), {a: 2, b: [4, 6], c: {d: 8}})
+  })
 })
