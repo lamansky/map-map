@@ -16,7 +16,7 @@ The module exports a single function.
 
 ### Parameters
 
-1. Bindable: `map` (Array, iterator, Object, Map, Set, string, or Typed Array)
+1. `map` (Array, iterator, Object, Map, Set, string, or Typed Array)
 2. `mapper` (function): The callback which receives three arguments (key, value, and index) and which returns a two-element array containing the new key and value.
 3. Optional: `options`: Object argument which is forwarded to [`entries-array`](https://github.com/lamansky/entries-array), a dependency of this module.
 
@@ -43,3 +43,11 @@ let obj = {key: 'value'}
 obj = mapMap(obj, (key, value, index) => [key + '_mapped', value + '_mapped'])
 obj.key_mapped // 'value_mapped'
 ```
+
+## Version Migration Guide
+
+Here are backward-incompatible changes you need to know about.
+
+### 3.2.0 ⇒ Master
+
+* To reduce overhead, support for the bind operator has been removed.
