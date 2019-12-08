@@ -20,12 +20,12 @@
   },
   "dependencies": {
     "construct-map": "^1.2.0",
-    "entries-array": "^1.1.0",
+    "entries-array": "^1.2.0",
     "sbo": "^1.1.0"
   },
   "devDependencies": {
     "eslint-config-lamansky": "^2.0.0",
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.2"
   },
   "scripts": {
     "test": "mocha"
